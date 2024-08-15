@@ -1,0 +1,15 @@
+---
+import { type Location } from '../data/locations';
+
+interface Props {
+  location: Location;
+}
+const { location } = Astro.props as Props;
+---
+<a href={`/location/${location.slug}`} class="block overflow-hidden transition-shadow border rounded shadow-lg hover:shadow-2xl">
+  <img src={`/images/locations/${location.image}`} alt={location.name} class="object-cover w-full h-48" />
+  <div class="p-4">
+    <h2 class="text-xl font-semibold">{location.name}</h2>
+    <p class="mt-2 text-gray-700">{location.description}</p>
+  </div>
+</a>

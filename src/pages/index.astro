@@ -1,0 +1,23 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import locations from '../data/locations';
+import MapComponent from '../components/Map';
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Travel Experience</title>
+  <link rel="stylesheet" href="../styles/global.css">
+</head>
+<body class="bg-gray-100">
+  <Header />
+  <main class="container p-4 mx-auto">
+    <h1 class="my-8 text-4xl text-center">Explore the World Virtually</h1>
+    <MapComponent locations={locations} client:idle/>
+  </main>
+  <Footer />
+</body>
+</html>
